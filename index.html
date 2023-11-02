@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .d-block{display: block;}
+        .d-none{display: none;}
+    </style>
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-        
+        <ul>
+            <li v-for="(email, index) in emails" :key="index"
+            :class="emails.length === 10 ? 'd-block' : 'd-none'">
+                la email è: {{ email }}
+            </li>
+        </ul>
     </div>
     <script src="./js/app.js"></script>
 </body>
